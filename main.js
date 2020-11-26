@@ -10,11 +10,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
 // Replace this with your Sheety URL
 // Make sure NOT to include the sheet name in the URL (just the project name!)
-<<<<<<< HEAD
-var projectUrl = 'https://api.sheety.co/d5e5dcce91c56b90163fb6447d62cc80/craftedInWi/products';
-=======
-var projectUrl = 'https://api.sheety.co/phill/productHunt';
->>>>>>> Initial commit
+var projectUrl = 'https://api.sheety.co/d5e5dcce91c56b90163fb6447d62cc80/craftedInWi';
 
 function loadProducts() {
 	fetch(projectUrl + '/products')
@@ -40,11 +36,7 @@ function drawProducts(products) {
 	var template = Handlebars.compile(document.getElementById("products-template").innerHTML);
 	document.getElementById('products-container').innerHTML = template({
 		title: this.title,
-<<<<<<< HEAD
 		products: products
-=======
-		products: products	
->>>>>>> Initial commit
 	});
 }
 
@@ -73,11 +65,7 @@ function upvoteProduct(id) {
 	});
 	product.votes = product.votes + 1;
 	product.hasVoted = true;
-<<<<<<< HEAD
 
-=======
-	
->>>>>>> Initial commit
 	let headers = new Headers();
 	headers.set('content-type', 'application/json');
 	fetch(projectUrl + '/products/' + id, {
@@ -85,10 +73,6 @@ function upvoteProduct(id) {
 		body: JSON.stringify({ product: product }),
 		headers: headers
 	});
-<<<<<<< HEAD
 
-=======
-	
->>>>>>> Initial commit
 	showAllProducts();
 }
