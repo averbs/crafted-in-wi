@@ -15,7 +15,7 @@
 
 <!-- Template for the main menu / categories -->
 <script id="menu-template" type="text/x-handlebars-template">
-	<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm mb-4">
+	<nav class="navbar navbar-expand-md navbar-dark shadow-sm mb-4">
 		<a class="navbar-brand" href="#" onclick="showAllProducts();">Crafted in WI</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -40,21 +40,24 @@
 <!-- Template for the products -->
 <script id="products-template" type="text/x-handlebars-template">
 	<h3>{{title}}</h3>
-	<div class="shadow-sm bg-white rounded-lg">
+	<div class="shadow-sm rounded-lg">
 		{{#each this.products as |product|}}
-			<div class="media border-bottom p-3" id="product-{{product.id}}">
-				<img src="{{product.iconUrl}}" width="50" class="mr-3">
-				<div class="media-body">
-					<h6 class="m-0">
-						<a href="{{product.website}}" target="_blank">{{product.name}}</a>
-					</h6>
-					<p class="m-0">{{product.shortDescription}}</p>
-					<p class="m-0 text-muted"><small>{{product.category}}</small></p>
-				</div>
+
+			<div class="media p-3" id="product-{{product.id}}">
+				<img src="{{product.iconUrl}}" width="50" class="mr-3 image">
+
+					<div class="media-body">
+						<a href="{{product.website}}" target="_blank">
+								<p class="m-0">{{product.shortDescription}}</p>
+								<p class="m-0 text-muted"><small>{{product.category}}</small></p>
+						</a>
+					</div>
+				
 				<button class="btn btn-outline-primary" onclick="upvoteProduct({{product.id}});" {{#if product.hasVoted}}disabled{{/if}}>
 					&#x21e7; {{product.votes}}
 				</button>
 			</div>
+
 		{{/each}}
 		{{#unless this.products}}
 			<p class="p-5 text-center text-muted">No products found</p>
@@ -62,12 +65,12 @@
 	</div>
 </script>
 </head>
-<body class="bg-light">
+<body>
 	<div id="menu-container"></div>
 	<div class="container" id="products-container">
 		<!-- Loading indicator: this gets replaced when we have products -->
 		<div class="text-center p-5 m-5">
-			<div class="text-muted p-2">Loading products...</div>
+			<div class="text-muted p-2">Loading goodness...</div>
 			<div class="spinner-border text-primary" role="status"></div>
 		</div>
 	</div>

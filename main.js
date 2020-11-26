@@ -47,7 +47,7 @@ function drawCategories() {
 }
 
 function showAllProducts() {
-	this.title = "All Products";
+	this.title = "Everything";
 	drawProducts(this.products);
 }
 

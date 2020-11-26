@@ -1,3 +1,31 @@
 .media:hover {
-	background-color: #FBFBFB;
+	background-color: #212121;
+}
+
+body {
+	background: black;
+}
+h3 { color: white;}
+
+small {
+	border: 1px solid;
+	padding: 2px 4px;
+	border-radius: 4px;
+	border-color: #6C757B;
+}
+
+.image {
+	border-radius: 4px;
+}
+p {color: white;}
+
+nav.navbar {
+	background: #212121;
+	color: white;
+}
+a.nav-link {
+	color: grey;
+}
+.navbar-brand {
+	color: white;
 }
